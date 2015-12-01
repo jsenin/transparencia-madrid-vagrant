@@ -28,3 +28,10 @@
 - name: configure postresql auth for vagrant user
   script: postgresql_setup_user.sh  {{ db_username }} {{ db_password }} {{ db_development_name }}
 
+- name: pouplate production database
+  shell: /bin/bash -c "source ~/.rvm/scripts/rvm && cd {{ app_dir }} && bin/rake db:setup"
+  sudo: false 
+
+- name: pouplate testing database
+  shell: /bin/bash -c "source ~/.rvm/scripts/rvm && cd {{ app_dir }} && RAILS_ENV=test bin/rake db:setup"
+  sudo: false

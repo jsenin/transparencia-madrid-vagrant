@@ -12,4 +12,7 @@ git submodule update --init
 vagrant up
 ```
 
+If provision fails, run again with
 
+```
+vagrant provision

@@ -8,6 +8,7 @@ apt-get install vagrant ansible git
 
 git clone https://github.com/jsenin/transparencia-madrid-vagrant 
 cd transparencia-madrid-vagrant
+git submodule update --init
 vagrant up
 ```
 
